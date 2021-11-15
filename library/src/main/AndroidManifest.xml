@@ -2,6 +2,7 @@
     package="com.awareframework.android.sensor.accelerometer">
 
     <application>
+
         <service
             android:name=".AccelerometerSensor"
             android:exported="true" />
@@ -16,4 +17,5 @@
             </intent-filter>
         </receiver>
     </application>
+
 </manifest>

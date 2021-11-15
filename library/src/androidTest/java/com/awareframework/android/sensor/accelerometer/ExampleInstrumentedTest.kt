@@ -1,7 +1,10 @@
 package com.awareframework.android.sensor.accelerometer
 
-import android.support.test.InstrumentationRegistry
-import android.support.test.runner.AndroidJUnit4
+//import android.support.test.InstrumentationRegistry
+//import android.support.test.runner.AndroidJUnit4
+//import androidx.test.InstrumentationRegistry.getTargetContext
+import androidx.test.ext.junit.runners.AndroidJUnit4
+import androidx.test.platform.app.InstrumentationRegistry
 import com.awareframework.android.core.db.Engine
 import com.awareframework.android.sensor.accelerometer.model.AccelerometerData
 import org.junit.Assert.assertEquals
@@ -18,8 +21,10 @@ class ExampleInstrumentedTest {
     @Test
     fun useAppContext() {
         // Context of the app under test.
-        val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("com.aware.android.sensor.accelerometer.test", appContext.packageName)
+        // val appContext = InstrumentationRegistry.getInstrumentation().context;
+        // getTargetContext()
+        val appContext = InstrumentationRegistry.getInstrumentation().targetContext;
+        assertEquals("com.awareframework.android.sensor.accelerometer.test", appContext.packageName)
 
         AccelerometerSensor.start(appContext, AccelerometerSensor.Config().apply {
             sensorObserver = object : AccelerometerSensor.Observer {

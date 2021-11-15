@@ -2,7 +2,7 @@ apply plugin: 'com.android.library'
 
 apply plugin: 'kotlin-android'
 
-apply plugin: 'kotlin-android-extensions'
+//apply plugin: 'kotlin-android-extensions'
 
 apply plugin: 'com.github.dcendents.android-maven'
 
@@ -17,9 +17,12 @@ dependencies {
     implementation "com.android.support:appcompat-v7:$support_libs"
 
     // TEST
-    testImplementation 'junit:junit:4.12'
-    androidTestImplementation "com.android.support.test:runner:$support_test_runner"
-    androidTestImplementation "com.android.support.test.espresso:espresso-core:$test_espresso_espresso_core"
+    testImplementation 'junit:junit:4.13.2'
+//    androidTestImplementation "com.android.support.test:runner:$support_test_runner"
+//    androidTestImplementation "com.android.support.test.espresso:espresso-core:$test_espresso_espresso_core"
+
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.4.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.3'
 
     // KOTLIN
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
@@ -46,10 +49,18 @@ android {
         }
     }
 
+    buildFeatures {
+        viewBinding = true
+    }
+
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
         targetCompatibility JavaVersion.VERSION_1_8
     }
+
+    useLibrary 'android.test.runner'
+//    useLibrary 'android.test.base'
+//    useLibrary 'android.test.mock'
 }
 
 // build a jar with source files
