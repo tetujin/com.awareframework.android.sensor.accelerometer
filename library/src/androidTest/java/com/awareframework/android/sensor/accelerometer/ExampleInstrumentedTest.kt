@@ -1,8 +1,5 @@
 package com.awareframework.android.sensor.accelerometer
 
-//import android.support.test.InstrumentationRegistry
-//import android.support.test.runner.AndroidJUnit4
-//import androidx.test.InstrumentationRegistry.getTargetContext
 import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import com.awareframework.android.core.db.Engine
